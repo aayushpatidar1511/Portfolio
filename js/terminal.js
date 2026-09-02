@@ -103,7 +103,7 @@ architecting secure REST APIs with JWT & RBAC, and deploying containerized appli
 📱 Phone:    <a href="tel:+919174405591" class="response-highlight">+91 9174405591</a>
 🔗 LinkedIn: <a href="https://linkedin.com/in/aayush-patidar-a13368244" target="_blank" class="response-highlight">linkedin.com/in/aayush-patidar-a13368244</a>
 💻 GitHub:   <a href="https://github.com/aayushpatidar1511" target="_blank" class="response-highlight">github.com/aayushpatidar1511</a>
-🌐 Portfolio: <span class="response-success">portfolio.aayushpatidar.dev</span>
+🌐 Portfolio: <a href="https://aayushpatidar1511.github.io/Portfolio/" target="_blank" class="response-success">https://aayushpatidar1511.github.io/Portfolio/</a>
 `,
 
     'sudo hire': () => `
