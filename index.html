@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <!-- SEO & Social Meta Tags -->
+  <title>Aayush Patidar | Full Stack Developer & Software Engineer</title>
+  <meta name="description" content="Portfolio of Aayush Patidar — Results-oriented Full Stack Developer specializing in Next.js 15, React 19, TypeScript, Django REST, Spring Boot 3.3, PostgreSQL/PostGIS, Docker, and Geospatial ML systems." />
+  <meta name="keywords" content="Aayush Patidar, Full Stack Developer, Next.js 15, React 19, Django REST, Spring Boot 3.3, PostgreSQL, PostGIS, Docker, Portfolio" />
+  <meta name="author" content="Aayush Patidar" />
+  
+  <!-- OpenGraph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aayushpatidar1511.github.io/" />
+  <meta property="og:title" content="Aayush Patidar | Full Stack Developer" />
+  <meta property="og:description" content="Explore production projects (CiviFix, FixMate), scalable architectures, and interactive 3D developer portfolio of Aayush Patidar." />
+  <meta property="og:image" content="assets/images/avatar.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/terminal.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+
+  <!-- Interactive 3D WebGL Canvas Layer -->
+  <div id="webgl-canvas-container"></div>
+
+  <!-- Ambient Light Orbs -->
+  <div class="bg-ambient-layer">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Cyber Grid Background Pattern -->
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Interactive Mouse Parallax Light -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+
+  <!-- ==========================================================================
+       Navigation Bar Header
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" id="brand-logo-link">
+        <div class="brand-icon">AP</div>
+        <div class="brand-text">Aayush<span>Patidar</span></div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active" id="nav-hero-link">Home</a>
+        <a href="#projects" class="nav-link" id="nav-projects-link">Projects</a>
+        <a href="#skills" class="nav-link" id="nav-skills-link">Skills</a>
+        <a href="#education" class="nav-link" id="nav-education-link">Education</a>
+        <a href="#contact" class="nav-link" id="nav-contact-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Terminal Shortcut Trigger -->
+        <button class="terminal-trigger-badge" id="terminal-trigger-btn" title="Open Developer Terminal (Ctrl+K)">
+          <i data-lucide="terminal"></i>
+          <span>CLI</span>
+          <span class="key-badge">Ctrl+K</span>
+        </button>
+
+        <!-- Audio FX Toggle -->
+        <button class="btn-icon-nav" id="audio-toggle-btn" title="Toggle Sound FX">
+          <i data-lucide="volume-x"></i>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle Navigation">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-nav-drawer" id="mobile-drawer">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+      <span class="greeting-pill">Navigation</span>
+      <button id="mobile-close-btn" style="color: #fff;"><i data-lucide="x"></i></button>
+    </div>
+    <a href="#hero" class="mobile-nav-link nav-link">Home</a>
+    <a href="#projects" class="mobile-nav-link nav-link">Projects</a>
+    <a href="#skills" class="mobile-nav-link nav-link">Skills</a>
+    <a href="#education" class="mobile-nav-link nav-link">Education</a>
+    <a href="#contact" class="mobile-nav-link nav-link">Contact</a>
+    <button class="btn btn-primary" onclick="openTerminal();" style="margin-top: 20px;">
+      <i data-lucide="terminal"></i> Launch Terminal
+    </button>
+  </aside>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      
+      <!-- Left Hero Content -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for Full-Stack & Backend Roles</span>
+          </div>
+          <span class="greeting-pill">📍 Indore, India</span>
+        </div>
+
+        <h1 class="hero-title">
+          Engineering Scalable Web Platforms with <span class="name-gradient">Aayush Patidar</span>
+        </h1>
+
+        <div class="hero-role-wrapper">
+          <span>I architect & build</span>
+          <span class="typing-text" id="typewriter-target">Full Stack Developer</span>
+        </div>
+
+        <p class="hero-summary">
+          Results-oriented <strong>Full Stack Developer</strong> with strong expertise in engineering scalable web platforms using <strong>Next.js 15, React 19, TypeScript, Python (Django REST), and Java (Spring Boot 3.3)</strong>. Proven track record in designing spatial and normalized relational databases (<strong>PostgreSQL/PostGIS, MySQL, Redis</strong>), architecting secure REST APIs with JWT & RBAC, and deploying containerized applications with Docker on cloud platforms.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary shimmer-btn" id="hero-cta-projects">
+            <i data-lucide="sparkles"></i> Explore Key Projects
+          </a>
+          <button class="btn btn-secondary" id="hero-terminal-btn">
+            <i data-lucide="terminal"></i> Developer CLI
+          </button>
+          <a href="#contact" class="btn btn-outline" id="hero-cta-contact">
+            <i data-lucide="send"></i> Get In Touch
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <span class="social-label">Connect Directly:</span>
+          <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="https://linkedin.com/in/aayush-patidar-a13368244" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="mailto:aayushmahendrapatidar@gmail.com" class="social-link" title="Send Direct Email">
+            <i data-lucide="mail"></i>
+          </a>
+          <a href="tel:+919174405591" class="social-link" title="Call / WhatsApp">
+            <i data-lucide="phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right 3D Visual Profile Card -->
+      <div class="hero-visual">
+        <div class="hero-avatar-card" id="hero-avatar-3d-card">
+          <div class="avatar-image-frame">
+            <img src="assets/images/avatar.jpg" alt="Aayush Patidar Developer Avatar" class="avatar-img" />
+            <div class="avatar-overlay-data">
+              <div class="avatar-name-tag">
+                <h4>Aayush Patidar</h4>
+                <p>Full Stack Engineer</p>
+              </div>
+              <div class="avatar-location-tag">
+                <i data-lucide="award"></i> SVVV 2022–26
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-pill-badge pill-1">
+            <div class="pill-icon"><i data-lucide="cpu"></i></div>
+            <div class="pill-text">
+              <h5>Next.js 15 & Spring 3.3</h5>
+              <span>High-Performance APIs</span>
+            </div>
+          </div>
+
+          <div class="floating-pill-badge pill-2">
+            <div class="pill-icon"><i data-lucide="database"></i></div>
+            <div class="pill-text">
+              <h5>PostGIS & MySQL (3NF)</h5>
+              <span>Spatial & ACID Scalability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Impact Stats Section
+       ========================================================================== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-icon"><i data-lucide="layers"></i></div>
+          <div class="stat-info">
+            <h3>4+ Portals</h3>
+            <p>Role-Based RBAC Architecture</p>
+          </div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-icon"><i data-lucide="database"></i></div>
+          <div class="stat-info">
+            <h3>17 Tables</h3>
+            <p>Normalized 3NF Relational Schemas</p>
+          </div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-icon"><i data-lucide="map-pin"></i></div>
+          <div class="stat-info">
+            <h3>PostGIS & GIS</h3>
+            <p>Geospatial Heatmaps & Haversine</p>
+          </div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-icon"><i data-lucide="container"></i></div>
+          <div class="stat-info">
+            <h3>Docker Cloud</h3>
+            <p>Containerized Production Pipelines</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Key Projects Showcase Section
+       ========================================================================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag"><i data-lucide="folder-git-2"></i> Featured Production Work</span>
+        <h2 class="section-title">Engineered for Reliability & Scale</h2>
+        <p class="section-desc">
+          High-impact full stack web platforms featuring spatial databases, role-based multi-tenant security, and asynchronous machine learning triage workflows.
+        </p>
+      </div>
+
+      <div class="projects-wrapper">
+        
+        <!-- Project 1: CiviFix -->
+        <div class="project-card reveal" id="project-card-civifix">
+          <div class="project-media">
+            <img src="assets/images/civifix.jpg" alt="CiviFix Smart Municipal Platform Mockup" class="project-thumbnail" />
+            <div class="project-badge-overlay">
+              <i data-lucide="sparkles"></i> Next.js 15 + Django REST + PostGIS
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="project-category">
+              <i data-lucide="building-2"></i> Civic Tech & Geospatial AI
+            </div>
+            <h3 class="project-name">CiviFix — Smart Municipal Civic Grievance & AI Operations Platform</h3>
+            <p class="project-summary">
+              An enterprise full-stack platform featuring 4 role-based portals designed to revolutionize municipal issue resolution through real-time GIS mapping, NLP-driven triage pipelines, and automated SLA tracking.
+            </p>
+            <div class="project-features">
+              <div class="feature-bullet">
+                <i data-lucide="shield-check"></i>
+                <span><strong>Role-Based Architecture:</strong> 4 role portals (Citizen, Field Worker, Department Officer, City Admin) secured with stateless JWT auth & granular RBAC.</span>
+              </div>
+              <div class="feature-bullet">
+                <i data-lucide="map-pin"></i>
+                <span><strong>Geospatial Intelligence:</strong> PostgreSQL/PostGIS integrated with Leaflet GIS for coordinate plotting, duplicate radius detection, and ward heatmaps.</span>
+              </div>
+              <div class="feature-bullet">
+                <i data-lucide="cpu"></i>
+                <span><strong>AI Triage & Async Workers:</strong> Scikit-Learn NLP pipeline for automated priority classification paired with Celery & Redis for SLA breach monitoring.</span>
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Next.js 15</span>
+              <span class="tech-tag">React 19</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Django REST</span>
+              <span class="tech-tag">PostgreSQL / PostGIS</span>
+              <span class="tech-tag">Celery & Redis</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Vercel & Supabase</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-primary btn-project shimmer-btn" onclick="openProjectModal('civifix');" id="btn-modal-civifix">
+                <i data-lucide="eye"></i> Deep Dive Architecture
+              </button>
+              <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-project">
+                <i data-lucide="github"></i> GitHub Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: FixMate -->
+        <div class="project-card reveal reveal-delay-1" id="project-card-fixmate">
+          <div class="project-media">
+            <img src="assets/images/fixmate.jpg" alt="FixMate Local Service Platform Mockup" class="project-thumbnail" />
+            <div class="project-badge-overlay">
+              <i data-lucide="wrench"></i> Java 17 + Spring Boot 3.3 + MySQL 8.0
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="project-category">
+              <i data-lucide="shopping-bag"></i> Local Services Marketplace
+            </div>
+            <h3 class="project-name">FixMate — Local Service Booking & Management Platform</h3>
+            <p class="project-summary">
+              A production-ready local service discovery and marketplace platform architected in Java 17 and Spring Boot 3.3, featuring precision Haversine distance calculations and strict 3NF relational data integrity.
+            </p>
+            <div class="project-features">
+              <div class="feature-bullet">
+                <i data-lucide="users"></i>
+                <span><strong>Multi-Role Marketplace:</strong> Role-based dashboards (Customer, Service Pro, Admin) with stateless JWT authentication & BCrypt password encryption.</span>
+              </div>
+              <div class="feature-bullet">
+                <i data-lucide="navigation"></i>
+                <span><strong>Smart Geo-Search:</strong> Haversine formula distance calculations across cities (Ujjain, Indore, Bhopal) with collision-free slot booking.</span>
+              </div>
+              <div class="feature-bullet">
+                <i data-lucide="database"></i>
+                <span><strong>Relational Schema:</strong> 17 normalized (3NF) tables in MySQL with composite B-Tree indexing, ACID dispute procedures, and audit triggers.</span>
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Java 17</span>
+              <span class="tech-tag">Spring Boot 3.3</span>
+              <span class="tech-tag">Spring Security</span>
+              <span class="tech-tag">JJWT</span>
+              <span class="tech-tag">MySQL 8.0 (3NF)</span>
+              <span class="tech-tag">Vanilla JS</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Render Cloud</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-primary btn-project shimmer-btn" onclick="openProjectModal('fixmate');" id="btn-modal-fixmate">
+                <i data-lucide="eye"></i> Deep Dive Architecture
+              </button>
+              <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-project">
+                <i data-lucide="github"></i> GitHub Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Technical Skills Matrix
+       ========================================================================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag"><i data-lucide="cpu"></i> Technical Capabilities</span>
+        <h2 class="section-title">Skills & Engineering Stack</h2>
+        <p class="section-desc">
+          Proficient in modern full-stack frameworks, database design, asynchronous message queues, and cloud containerization.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="skills-filter-nav reveal">
+        <button class="filter-btn active" data-filter="all" id="skill-filter-all">
+          <span>All Technologies</span>
+          <span class="filter-count">30+</span>
+        </button>
+        <button class="filter-btn" data-filter="languages" id="skill-filter-lang">
+          <i data-lucide="code-2"></i>
+          <span>Languages</span>
+        </button>
+        <button class="filter-btn" data-filter="frameworks" id="skill-filter-frame">
+          <i data-lucide="layers"></i>
+          <span>Frameworks</span>
+        </button>
+        <button class="filter-btn" data-filter="databases" id="skill-filter-db">
+          <i data-lucide="database"></i>
+          <span>Databases</span>
+        </button>
+        <button class="filter-btn" data-filter="devops" id="skill-filter-devops">
+          <i data-lucide="cloud"></i>
+          <span>DevOps & Cloud</span>
+        </button>
+        <button class="filter-btn" data-filter="competencies" id="skill-filter-core">
+          <i data-lucide="check-circle-2"></i>
+          <span>Core Concepts</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Skills Grid Container -->
+      <div class="skills-grid" id="skills-grid-target"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Education & Milestones Section
+       ========================================================================== -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag"><i data-lucide="graduation-cap"></i> Academic Journey</span>
+        <h2 class="section-title">Education & Milestones</h2>
+        <p class="section-desc">
+          Strong academic foundations in computer science, software engineering principles, and mathematics.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        
+        <!-- B.Tech -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-marker-inner"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Bachelor of Technology (B.Tech) in Computer Science & Engineering</h3>
+                <div class="timeline-institution">Shri Vaishnav Vidyapeeth Vishwavidyalaya, Indore</div>
+              </div>
+              <span class="timeline-period">2022 – 2026</span>
+            </div>
+            <div class="timeline-score">
+              <i data-lucide="award"></i> CGPA: 6.93 / 10.0
+            </div>
+            <p class="timeline-desc">
+              Focus on Data Structures & Algorithms (DSA), Object-Oriented Software Design (OOPs), Database Management Systems (DBMS), Operating Systems, and Distributed Web Platforms.
+            </p>
+          </div>
+        </div>
+
+        <!-- Class XII -->
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-marker">
+            <div class="timeline-marker-inner"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Class XII (Senior Secondary) – Science (PCM)</h3>
+                <div class="timeline-institution">Maharishi Ved Vyas Public H.S. School</div>
+              </div>
+              <span class="timeline-period">2022</span>
+            </div>
+            <div class="timeline-score">
+              <i data-lucide="award"></i> Score: 70.8%
+            </div>
+            <p class="timeline-desc">
+              Specialized in Physics, Chemistry, and Advanced Mathematics, developing analytical problem-solving and algorithmic thinking.
+            </p>
+          </div>
+        </div>
+
+        <!-- Class X -->
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-marker">
+            <div class="timeline-marker-inner"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Class X (Secondary School Certificate)</h3>
+                <div class="timeline-institution">Maharishi Ved Vyas Public H.S. School</div>
+              </div>
+              <span class="timeline-period">2020</span>
+            </div>
+            <div class="timeline-score">
+              <i data-lucide="award"></i> Score: 60.0%
+            </div>
+            <p class="timeline-desc">
+              Completed foundational education with comprehensive coursework in mathematics, science, and computer fundamentals.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Contact Section
+       ========================================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag"><i data-lucide="mail"></i> Get in Touch</span>
+        <h2 class="section-title">Let's Build Scalable Systems Together</h2>
+        <p class="section-desc">
+          Interested in discussing a software engineering role, project collaboration, or architecture? Reach out directly.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Left Contact Direct Channels -->
+        <div class="contact-info-card reveal">
+          <div>
+            <h3>Direct Contact Channels</h3>
+            <p>Fastest response via email or LinkedIn messages.</p>
+          </div>
+
+          <div class="contact-methods">
+            
+            <!-- Email -->
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="contact-icon"><i data-lucide="mail"></i></div>
+                <div class="contact-item-text">
+                  <p>Email</p>
+                  <h5>aayushmahendrapatidar@gmail.com</h5>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('aayushmahendrapatidar@gmail.com', 'Email');" title="Copy Email">
+                <i data-lucide="copy"></i> Copy
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="contact-icon"><i data-lucide="phone"></i></div>
+                <div class="contact-item-text">
+                  <p>Phone / WhatsApp</p>
+                  <h5>+91 9174405591</h5>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('+919174405591', 'Phone Number');" title="Copy Phone">
+                <i data-lucide="copy"></i> Copy
+              </button>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="contact-icon"><i data-lucide="linkedin"></i></div>
+                <div class="contact-item-text">
+                  <p>LinkedIn</p>
+                  <h5>aayush-patidar-a13368244</h5>
+                </div>
+              </div>
+              <a href="https://linkedin.com/in/aayush-patidar-a13368244" target="_blank" rel="noopener noreferrer" class="copy-btn">
+                <i data-lucide="external-link"></i> Visit
+              </a>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="contact-icon"><i data-lucide="github"></i></div>
+                <div class="contact-item-text">
+                  <p>GitHub</p>
+                  <h5>@aayushpatidar1511</h5>
+                </div>
+              </div>
+              <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="copy-btn">
+                <i data-lucide="external-link"></i> Visit
+              </a>
+            </div>
+
+          </div>
+
+          <div style="background: rgba(6, 182, 212, 0.06); border: 1px solid rgba(6, 182, 212, 0.2); padding: 16px; border-radius: var(--radius-md);">
+            <div style="display: flex; align-items: center; gap: 8px; color: var(--accent-cyan-bright); font-weight: 600; font-size: 0.9rem;">
+              <i data-lucide="terminal"></i> Interactive Recruiter Tip
+            </div>
+            <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 6px;">
+              Press <span class="key-badge">Ctrl+K</span> anytime or run <span class="key-badge">sudo hire</span> inside the CLI terminal for fast-track interview scheduling.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Contact Form -->
+        <div class="contact-form-card reveal reveal-delay-1">
+          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px;">
+            Send a Direct Dispatch
+          </h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Your Name</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="e.g. John Doe / Tech Recruiter" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="e.g. recruiter@company.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message / Job Description</label>
+              <textarea id="contact-message" class="form-control" placeholder="Tell me about the role, project scope, or opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary shimmer-btn" style="width: 100%;" id="btn-submit-message">
+              <i data-lucide="send"></i> Dispatch Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-icon">AP</div>
+            <div class="brand-text">Aayush<span>Patidar</span></div>
+          </div>
+          <p>Full Stack Developer — Building high-performance, spatial & cloud web systems.</p>
+        </div>
+
+        <div style="display: flex; gap: 12px;">
+          <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="social-link"><i data-lucide="github"></i></a>
+          <a href="https://linkedin.com/in/aayush-patidar-a13368244" target="_blank" rel="noopener noreferrer" class="social-link"><i data-lucide="linkedin"></i></a>
+          <a href="mailto:aayushmahendrapatidar@gmail.com" class="social-link"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Aayush Patidar. Engineered with Vanilla CSS, Three.js & Modern Web Standards.
+        </div>
+        <div class="github-host-badge">
+          <i data-lucide="shield-check" style="color: var(--accent-emerald);"></i>
+          <span>100% Safe & Secure Static Hosting on GitHub Pages</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Project Detail Modal Overlay
+       ========================================================================== -->
+  <div class="modal-overlay" id="project-detail-modal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="project-modal-close-btn" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="project-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Developer CLI Terminal Modal
+       ========================================================================== -->
+  <div class="terminal-modal-overlay" id="terminal-modal">
+    <div class="terminal-window">
+      <div class="terminal-header-bar">
+        <div class="terminal-controls">
+          <button class="term-btn term-btn-close" id="terminal-close-btn"></button>
+          <button class="term-btn term-btn-min"></button>
+          <button class="term-btn term-btn-max"></button>
+        </div>
+        <div class="terminal-title-text">
+          <i data-lucide="terminal" style="width: 14px; height: 14px;"></i>
+          <span>aayush@portfolio-cli: ~</span>
+        </div>
+        <div class="terminal-shortcuts-hint">
+          ESC to close
+        </div>
+      </div>
+
+      <div class="terminal-body">
+        <div class="terminal-output" id="terminal-output">
+          <div class="terminal-welcome">
+Welcome to Aayush Patidar's Developer CLI v2.4 (x86_64-portfolio-core)
+Type '<span class="cmd-badge">help</span>' to view all available commands or '<span class="cmd-badge">skills</span>' to inspect tech proficiencies.
+          </div>
+        </div>
+
+        <div class="terminal-input-row">
+          <span class="prompt-prefix">aayush@portfolio:~$</span>
+          <input type="text" id="terminal-cmd-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command (e.g. help, skills, civifix, contact, sudo hire)..." />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Libraries (CDNs for maximum performance and 100% zero-config GitHub Pages compatibility) -->
+  <!-- Three.js (3D WebGL Engine) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Application Modules -->
+  <script src="js/audio.js"></script>
+  <script src="js/scene3d.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
