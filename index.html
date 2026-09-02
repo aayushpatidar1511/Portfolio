@@ -246,113 +246,66 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag"><i data-lucide="folder-git-2"></i> Featured Production Work</span>
-        <h2 class="section-title">Engineered for Reliability & Scale</h2>
-        <p class="section-desc">
-          High-impact full stack web platforms featuring spatial databases, role-based multi-tenant security, and asynchronous machine learning triage workflows.
-        </p>
+        <h2 class="section-title">Key Technical Projects</h2>
       </div>
 
-      <div class="projects-wrapper">
+      <div class="projects-wrapper-clean">
         
         <!-- Project 1: CiviFix -->
-        <div class="project-card reveal" id="project-card-civifix">
-          <div class="project-media">
-            <img src="assets/images/civifix.jpg" alt="CiviFix Smart Municipal Platform Mockup" class="project-thumbnail" />
-            <div class="project-badge-overlay">
-              <i data-lucide="sparkles"></i> Next.js 15 + Django REST + PostGIS
+        <div class="project-clean-card reveal" id="project-card-civifix">
+          <div class="project-clean-header">
+            <div>
+              <h3 class="project-clean-title">CiviFix — Smart Municipal Civic Grievance & AI Operations Platform</h3>
+              <div class="project-clean-category">Next.js 15 • React 19 • TypeScript • Django REST • PostgreSQL / PostGIS • Celery • Redis • Docker</div>
             </div>
+            <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="btn-live-demo" title="Open Live Demo">
+              <span>Live Demo</span>
+              <i data-lucide="external-link"></i>
+            </a>
           </div>
-          <div class="project-details">
-            <div class="project-category">
-              <i data-lucide="building-2"></i> Civic Tech & Geospatial AI
-            </div>
-            <h3 class="project-name">CiviFix — Smart Municipal Civic Grievance & AI Operations Platform</h3>
-            <p class="project-summary">
-              An enterprise full-stack platform featuring 4 role-based portals designed to revolutionize municipal issue resolution through real-time GIS mapping, NLP-driven triage pipelines, and automated SLA tracking.
-            </p>
-            <div class="project-features">
-              <div class="feature-bullet">
-                <i data-lucide="shield-check"></i>
-                <span><strong>Role-Based Architecture:</strong> 4 role portals (Citizen, Field Worker, Department Officer, City Admin) secured with stateless JWT auth & granular RBAC.</span>
-              </div>
-              <div class="feature-bullet">
-                <i data-lucide="map-pin"></i>
-                <span><strong>Geospatial Intelligence:</strong> PostgreSQL/PostGIS integrated with Leaflet GIS for coordinate plotting, duplicate radius detection, and ward heatmaps.</span>
-              </div>
-              <div class="feature-bullet">
-                <i data-lucide="cpu"></i>
-                <span><strong>AI Triage & Async Workers:</strong> Scikit-Learn NLP pipeline for automated priority classification paired with Celery & Redis for SLA breach monitoring.</span>
-              </div>
-            </div>
-            <div class="project-tech-stack">
-              <span class="tech-tag">Next.js 15</span>
-              <span class="tech-tag">React 19</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Django REST</span>
-              <span class="tech-tag">PostgreSQL / PostGIS</span>
-              <span class="tech-tag">Celery & Redis</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Vercel & Supabase</span>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-primary btn-project shimmer-btn" onclick="openProjectModal('civifix');" id="btn-modal-civifix">
-                <i data-lucide="eye"></i> Deep Dive Architecture
-              </button>
-              <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-project">
-                <i data-lucide="github"></i> GitHub Code
-              </a>
-            </div>
+
+          <p class="project-clean-desc">
+            An enterprise full-stack platform featuring 4 role-based portals (Citizen, Field Worker, Department Officer, City Admin) secured with stateless JWT auth & granular RBAC. Integrated PostgreSQL/PostGIS with Leaflet GIS for coordinate plotting, duplicate radius detection, and ward heatmaps. Features an NLP triage pipeline for automated priority classification paired with Celery & Redis background workers for SLA monitoring.
+          </p>
+
+          <div class="project-tech-stack">
+            <span class="tech-tag">Next.js 15</span>
+            <span class="tech-tag">React 19</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Django REST</span>
+            <span class="tech-tag">PostgreSQL / PostGIS</span>
+            <span class="tech-tag">Celery & Redis</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Vercel & Supabase</span>
           </div>
         </div>
 
         <!-- Project 2: FixMate -->
-        <div class="project-card reveal reveal-delay-1" id="project-card-fixmate">
-          <div class="project-media">
-            <img src="assets/images/fixmate.jpg" alt="FixMate Local Service Platform Mockup" class="project-thumbnail" />
-            <div class="project-badge-overlay">
-              <i data-lucide="wrench"></i> Java 17 + Spring Boot 3.3 + MySQL 8.0
+        <div class="project-clean-card reveal reveal-delay-1" id="project-card-fixmate">
+          <div class="project-clean-header">
+            <div>
+              <h3 class="project-clean-title">FixMate — Local Service Booking & Management Platform</h3>
+              <div class="project-clean-category">Java 17 • Spring Boot 3.3 • Spring Security • JJWT • MySQL 8.0 (3NF) • Vanilla JS • Docker</div>
             </div>
+            <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="btn-live-demo" title="Open Live Demo">
+              <span>Live Demo</span>
+              <i data-lucide="external-link"></i>
+            </a>
           </div>
-          <div class="project-details">
-            <div class="project-category">
-              <i data-lucide="shopping-bag"></i> Local Services Marketplace
-            </div>
-            <h3 class="project-name">FixMate — Local Service Booking & Management Platform</h3>
-            <p class="project-summary">
-              A production-ready local service discovery and marketplace platform architected in Java 17 and Spring Boot 3.3, featuring precision Haversine distance calculations and strict 3NF relational data integrity.
-            </p>
-            <div class="project-features">
-              <div class="feature-bullet">
-                <i data-lucide="users"></i>
-                <span><strong>Multi-Role Marketplace:</strong> Role-based dashboards (Customer, Service Pro, Admin) with stateless JWT authentication & BCrypt password encryption.</span>
-              </div>
-              <div class="feature-bullet">
-                <i data-lucide="navigation"></i>
-                <span><strong>Smart Geo-Search:</strong> Haversine formula distance calculations across cities (Ujjain, Indore, Bhopal) with collision-free slot booking.</span>
-              </div>
-              <div class="feature-bullet">
-                <i data-lucide="database"></i>
-                <span><strong>Relational Schema:</strong> 17 normalized (3NF) tables in MySQL with composite B-Tree indexing, ACID dispute procedures, and audit triggers.</span>
-              </div>
-            </div>
-            <div class="project-tech-stack">
-              <span class="tech-tag">Java 17</span>
-              <span class="tech-tag">Spring Boot 3.3</span>
-              <span class="tech-tag">Spring Security</span>
-              <span class="tech-tag">JJWT</span>
-              <span class="tech-tag">MySQL 8.0 (3NF)</span>
-              <span class="tech-tag">Vanilla JS</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Render Cloud</span>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-primary btn-project shimmer-btn" onclick="openProjectModal('fixmate');" id="btn-modal-fixmate">
-                <i data-lucide="eye"></i> Deep Dive Architecture
-              </button>
-              <a href="https://github.com/aayushpatidar1511" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-project">
-                <i data-lucide="github"></i> GitHub Code
-              </a>
-            </div>
+
+          <p class="project-clean-desc">
+            A production-ready local service marketplace platform featuring role-based dashboards (Customer, Service Pro, Admin) with stateless JWT authentication & BCrypt encryption. Implemented location-based service discovery using the Haversine formula across cities (Ujjain, Indore, Bhopal) with collision-free slot booking, 17 normalized (3NF) relational tables with composite B-Tree indexing, and 5-step checkout tracking.
+          </p>
+
+          <div class="project-tech-stack">
+            <span class="tech-tag">Java 17</span>
+            <span class="tech-tag">Spring Boot 3.3</span>
+            <span class="tech-tag">Spring Security</span>
+            <span class="tech-tag">JJWT</span>
+            <span class="tech-tag">MySQL 8.0 (3NF)</span>
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Render Cloud</span>
           </div>
         </div>
 
@@ -622,7 +575,7 @@
             <div class="brand-icon">AP</div>
             <div class="brand-text">Aayush<span>Patidar</span></div>
           </div>
-          <p>Full Stack Developer — Building high-performance, spatial & cloud web systems.</p>
+          <p>Full Stack Developer</p>
         </div>
 
         <div style="display: flex; gap: 12px;">
