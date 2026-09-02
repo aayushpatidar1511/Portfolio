@@ -142,7 +142,7 @@
     setTimeout(typeRole, typeSpeed);
   }
 
-  // --- 4. RENDER SKILLS GRID ---
+  // --- 4. RENDER SKILLS GRID (COMPACT BOXES) ---
   function renderSkills(category = 'all') {
     const grid = document.getElementById('skills-grid-target');
     if (!grid) return;
@@ -152,24 +152,11 @@
       : SKILLS_DATA.filter((s) => s.category === category);
 
     grid.innerHTML = filtered.map((skill) => `
-      <div class="skill-card reveal active" data-category="${skill.category}">
-        <div class="skill-header">
-          <div class="skill-icon-wrap">
-            <i data-lucide="${skill.icon}"></i>
-          </div>
-          <span class="skill-category-tag">${formatCategory(skill.category)}</span>
+      <div class="skill-box reveal active" data-category="${skill.category}">
+        <div class="skill-box-icon">
+          <i data-lucide="${skill.icon}"></i>
         </div>
-        <div>
-          <h4 class="skill-name">${skill.name}</h4>
-          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px;">${skill.desc}</p>
-        </div>
-        <div class="skill-level-bar">
-          <div class="skill-progress" style="width: ${skill.level}%"></div>
-        </div>
-        <div class="skill-footer-tags">
-          <span>Proficiency</span>
-          <strong style="color: var(--accent-cyan-bright); font-family: var(--font-mono);">${skill.level}%</strong>
-        </div>
+        <span class="skill-box-name">${skill.name}</span>
       </div>
     `).join('');
 
